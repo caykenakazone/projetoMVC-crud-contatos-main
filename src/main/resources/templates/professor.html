@@ -10,9 +10,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="professores" : ${professor}>
-                        <th scope="row" th:text="${professores.id}"></th>
-                        <td th:text="${professores.nome}"></td>
+                    <tr th:each="professor: ${professores}">
+                        <th scope="row" th:text="${professor.id}"></th>
+                        <td th:text="${professor.nome}" >
+                           
+                        </td>
+                        <td>
+                            <a th:href="@{/editar-professor(id=${professor.id})}">Editar</a>
+                            <a th:href="@{/excluir-professor(id=${professor.id})}">Excluir</a>
+                        </td>
+                        
                     </tr>
                 </tbody>
             </table>

@@ -1,0 +1,13 @@
+<html th:include="template :: modelo">
+    <div th:fragment="conteudo">
+        <form action="/armazenaprofeditado" method="post" th:object="${professoreditado}">
+            <div class="mb-3">
+                <input type="hidden" th:field="*{id}">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" th:field="*{nome}">
+            </div>
+            <button type="submit" class="btn btn-primary">Alterar</button>
+
+        </form>
+    </div>
+</html>
